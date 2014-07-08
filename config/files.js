@@ -10,8 +10,7 @@ module.exports = function(lineman) {
   return {
     js: {
       vendor: [
-        "vendor/js/jquery.js",
-        "vendor/js/angular.js",
+        "vendor/js/ionic.bundle.js",
         "vendor/js/**/*.js"
       ],
       app: [
@@ -23,7 +22,7 @@ module.exports = function(lineman) {
     less: {
       compile: {
         options: {
-          paths: ["vendor/css/bootstrap.css", "vendor/css/**/*.css", "app/css/**/*.less"]
+          paths: ["vendor/css/ionic.css", "vendor/css/**/*.css", "app/css/**/*.less"]
         }
       }
     },

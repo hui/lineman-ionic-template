@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
-    <title><%= pkg.name %></title>
-    <link rel="stylesheet" type="text/css" href="/css/app.css" media="all" />
+    <meta charset="utf-8">
+    <meta name="fragment" content="!" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="css/app.css" rel="stylesheet">
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
   </head>
+
   <body>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">A Lineman Angular Setup</a>
-        </div>
+    <ion-tabs class="tabs-positive tabs-icon-top">
+      <ion-tab title="Home" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline" ui-sref="home">
+        <ion-header-bar class="bar-positive">
+          <h1 class="title">Home</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div ui-view="home"></div>
+        </ion-content>
+      </ion-tab>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="#!/home">Home</a></li>
-            <li><a href="#!/list-of-books">Books</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <div class="container">
-      <div id="view" ui-view></div>
-    </div>
-
-    <script type="text/javascript" src="/js/app.js"></script>
+      <ion-tab title="Books" icon-on="ion-ios7-bookmarks" icon-off="ion-ios7-bookmarks-outline" ui-sref="list-of-books">
+        <ion-header-bar class="bar-positive">
+          <h1 class="title">Books</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div ui-view="books"></div>
+        </ion-content>
+      </ion-tab>
+    </ion-tabs>
   </body>
 </html>

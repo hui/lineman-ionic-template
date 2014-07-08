@@ -1,16 +1,14 @@
 angular.module("app").config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $locationProvider.html5Mode(false);
-  $locationProvider.hashPrefix('!');
+  // $locationProvider.hashPrefix('!');
 
   $stateProvider.state('home', {
     url: '/home',
-    templateUrl: 'home.html',
-    controller: 'HomeController'
+    views: { 'home': {templateUrl: 'home.html'} }
   }).state('list-of-books', {
     url: '/list-of-books',
-    templateUrl: 'books.html',
-    controller: 'BooksController'
+    views: { 'books': {templateUrl: 'books.html', controller: 'BooksController'} }
     // uncomment if you want to see an example of a route that resolves a request prior to rendering
     // resolve: {
     //   books : function(BookService) {
@@ -19,6 +17,5 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
     // }
   });
 
-  $urlRouterProvider.otherwise('/home');
-
+  $urlRouterProvider.otherwise('home');
 });
